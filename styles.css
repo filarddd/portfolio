@@ -1,9 +1,9 @@
 :root {
-  --bg: #d4d8dd;
-  --text: #1a2d42;
-  --accent: #2e4156;
-  --surface: #c0c8ca;
-  --border: #aab7b7;
+  --navy: #1f3a5f;
+  --sky: #5aa9e6;
+  --mist: #eaf4f4;
+  --ink: #222831;
+  --surface: #ffffff;
 }
 
 *, *::before, *::after {
@@ -14,14 +14,33 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   line-height: 1.6;
-  color: var(--text);
-  background: var(--bg);
+  color: var(--ink);
+  background: var(--mist);
 }
 
-header, main, footer {
+/* Header spans the full width; its content lines up with the 800px column below */
+header {
+  background: var(--navy);
+  color: var(--mist);
+  padding: 1.5rem max(1rem, calc((100% - 800px) / 2 + 1rem));
+}
+
+header h1 {
+  margin: 0;
+}
+
+header p {
+  margin: 0.25rem 0 0;
+}
+
+main, footer {
   max-width: 800px;
   margin: 0 auto;
   padding: 1.5rem 1rem;
+}
+
+h2, h3 {
+  color: var(--navy);
 }
 
 nav ul {
@@ -33,13 +52,29 @@ nav ul {
   margin: 1rem 0 0;
 }
 
+nav a {
+  display: inline-block;
+  padding: 0.65rem 0.25rem;
+  color: var(--mist);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+  border-bottom-color: var(--sky);
+}
+
 a {
-  color: var(--accent);
+  color: var(--navy);
 }
 
 a:focus-visible {
-  outline: 3px solid var(--accent);
+  outline: 3px solid var(--navy);
   outline-offset: 2px;
+}
+
+nav a:focus-visible {
+  outline-color: var(--sky);
 }
 
 section {
@@ -50,27 +85,15 @@ article {
   background: var(--surface);
   padding: 1rem 1.25rem;
   border-radius: 8px;
+  border-left: 4px solid var(--sky);
+}
+
+footer {
+  border-top: 2px solid var(--sky);
 }
 
 @media (min-width: 700px) {
-  header, main, footer {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
   h1 {
     font-size: 2.75rem;
   }
-}
-
-header {
-  border-bottom: 2px solid var(--border);
-}
-
-article {
-  border: 1px solid var(--border);
-}
-
-a:hover {
-  color: var(--text);
 }
