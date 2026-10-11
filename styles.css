@@ -88,6 +88,10 @@ article {
   border-left: 4px solid var(--sky);
 }
 
+article + article {
+  margin-top: 1.25rem;
+}
+
 footer {
   border-top: 2px solid var(--sky);
 }
