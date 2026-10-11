@@ -1,8 +1,9 @@
 :root {
-  --bg: #ffffff;
-  --text: #1f2933;
-  --accent: #0b5fff;
-  --surface: #f5f7fa;
+  --bg: #d4d8dd;
+  --text: #1a2d42;
+  --accent: #2e4156;
+  --surface: #c0c8ca;
+  --border: #aab7b7;
 }
 
 *, *::before, *::after {
@@ -60,4 +61,16 @@ article {
   h1 {
     font-size: 2.75rem;
   }
+}
+
+header {
+  border-bottom: 2px solid var(--border);
+}
+
+article {
+  border: 1px solid var(--border);
+}
+
+a:hover {
+  color: var(--text);
 }
